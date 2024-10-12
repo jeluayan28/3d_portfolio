@@ -11,7 +11,7 @@ import {
 import CanvasLoader from "../Loader";
 
 const Ball = (props) => {
-  const [decal]= useTexture([props.imgUrl])
+  const [decal] = useTexture([props.imgUrl]);
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
@@ -39,11 +39,7 @@ const Ball = (props) => {
 
 const BallCanvas = ({ icon }) => {
   return (
-    <Canvas
-      frameloop='demand'
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
-    >
+    <Canvas dpr={[1, 2]}>
       <Suspense fallback={<CanvasLoader />}>
         <OrbitControls enableZoom={false} />
         <Ball imgUrl={icon} />
@@ -54,4 +50,4 @@ const BallCanvas = ({ icon }) => {
   );
 };
 
-export default BallCanvas
+export default BallCanvas;
