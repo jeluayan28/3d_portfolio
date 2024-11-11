@@ -7,6 +7,13 @@ import github from "./github.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
+import html from "./tech/html.png";
+import css from "./tech/css.png";
+import javascript from "./tech/javascript.png";
+import typescript from "./tech/typescript.png";
+import reactjs from "./tech/reactjs.png";
+import redux from "./tech/redux.png";
+import tailwind from "./tech/tailwind.png";
 import docker from "./tech/docker.png";
 import figma from "./tech/figma.png";
 import git from "./tech/git.png";
@@ -45,4 +52,11 @@ export {
   skin,
   car,
   furniture,
+  html,
+  css,
+  javascript,
+  typescript,
+  reactjs,
+  redux,
+  tailwind,
 };

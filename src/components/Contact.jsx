@@ -28,10 +28,17 @@ const Contact = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+  
+    // Check if any field is empty
+    if (!form.name || !form.email || !form.message) {
+      alert("Please fill in all the fields.");
+      return;
+    }
+  
     setLoading(true);
-
-    emailjs.send
-      ('service_qcpbbjr', 
+  
+    emailjs.send(
+      'service_qcpbbjr', 
       'template_zsznpsd',
       {
         from_name: form.name,
@@ -41,26 +48,25 @@ const Contact = () => {
         message: form.message,
       },
       'MCDYMGtLzpM_5rjeu'
-      )
-      .then(
-        () => {
-          setLoading(false);
-          alert("Thank you. I will get back to you as soon as possible.");
-
-          setForm({
-            name: "",
-            email: "",
-            message: "",
-          });
-        },
-        (error) => {
-          setLoading(false);
-          console.error(error);
-
-          alert("Ahh, something went wrong. Please try again.");
-        }
-      );
+    )
+    .then(
+      () => {
+        setLoading(false);
+        alert("Thank you. I will get back to you as soon as possible.");
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+      },
+      (error) => {
+        setLoading(false);
+        console.error(error);
+        alert("Ahh, something went wrong. Please try again.");
+      }
+    );
   };
+  
 
   return (
     <div className= "xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
