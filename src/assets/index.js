@@ -26,8 +26,10 @@ import amazon from "./company/amazon.png";
 import mcdo from "./company/mcdo.png";
 import tesla from "./company/tesla.png";
 
-import skin from "./skin.png";
+import brainload from "./brainload.png";
 import car from "./car.png";
+import seniorbridge from "./seniorbridge.png";
+import wanderlust from "./wanderlust.png";
 import furniture from "./furniture.png"
 
 export {
@@ -49,8 +51,10 @@ export {
   amazon,
   mcdo,
   tesla,
-  skin,
+  brainload,
   car,
+  seniorbridge,
+  wanderlust,
   furniture,
   html,
   css,

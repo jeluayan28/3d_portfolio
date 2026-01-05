@@ -46,7 +46,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a proficient software developer specializing in TypeScript and JavaScript, with expertise in frameworks such as React, Node.js, and Three.js. With a strong aptitude for learning new technologies quickly, I work collaboratively with clients to develop efficient, scalable, and user-friendly solutions that address real-world challenges. Let’s team up to transform your ideas into reality!
+        I am a passionate and skilled Information Technology student and web developer, specializing in front-end and back-end development with expertise in React, Next.js, Laravel, and Three.js. I have a strong ability to learn new technologies quickly and collaborate effectively to build efficient, scalable, and user-friendly applications. I enjoy turning innovative ideas into functional digital solutions that solve real-world problems. Let's create something amazing together!
       </motion.p>
 
       {/* Adjust the parent div to center the ServiceCards */}
