@@ -46,7 +46,7 @@ const About = () => {
         variants={fadeIn("", "", 0.1, 1)}
         className="mt-4 text-secondary text-[17px] max-w-3xl leading-[30px]"
       >
-        I am a passionate and skilled Information Technology and web developer, specializing in front-end and back-end development with expertise in React, Next.js, Laravel, and Three.js. I have a strong ability to learn new technologies quickly and collaborate effectively to build efficient, scalable, and user-friendly applications. I enjoy turning innovative ideas into functional digital solutions that solve real-world problems. Let's create something amazing together!
+        I’m an Information Technology Graduate with experience in IT support and web development. I enjoy troubleshooting technical challenges, learning new technologies, and creating practical, user-friendly digital solutions. With a background in React, Next.js, Laravel, and modern web technologies, I combine technical problem-solving with a strong focus on functionality and usability. I’m always eager to learn, collaborate, and turn ideas into solutions that make a meaningful impact.
       </motion.p>
 
       {/* Adjust the parent div to center the ServiceCards */}
