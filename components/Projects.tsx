@@ -31,7 +31,7 @@ export function Projects() {
                     alt={`Screenshot of the ${p.title} website`}
                     fill
                     sizes="(min-width: 768px) 58vw, 100vw"
-                    className="object-cover object-left-top transition-transform duration-500 group-hover:scale-[1.03]"
+                    className={`object-cover ${p.imageCenter ? "object-center" : "object-left-top"} transition-transform duration-500 group-hover:scale-[1.03]`}
                   />
                 </a>
               )}

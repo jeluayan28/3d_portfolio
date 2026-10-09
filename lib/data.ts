@@ -26,6 +26,7 @@ export const profile = {
 
 export const navLinks = [
   { id: "about", label: "About" },
+  { id: "education", label: "Education" },
   { id: "work", label: "Work" },
   { id: "experience", label: "Experience" },
   { id: "skills", label: "Skills" },
@@ -43,6 +44,16 @@ export const about = {
     { value: "Support", label: "First focus" },
     { value: "Web", label: "Dev on the side" },
   ],
+};
+
+export const education = {
+  name: "Jelli C. Uayan",
+  photo: "/pic_grad.jpg",
+  degree: "Bachelor of Science in Information Technology",
+  school: "Caraga State University – Main Campus",
+  college: "College of Computing and Information Sciences",
+  graduated: "2026",
+  honor: "Cum Laude",
 };
 
 export type Pillar = { title: string; description: string; icon: LucideIcon };
@@ -69,18 +80,6 @@ export type SkillGroup = { title: string; items: string[] };
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "IT Support",
-    items: [
-      "Troubleshooting",
-      "Ticketing & Documentation",
-      "Windows",
-      "Microsoft Office",
-      "Hardware Repair",
-      "Remote Support",
-      "Customer Service",
-    ],
-  },
-  {
     title: "Web Development",
     items: ["React", "Next.js", "TypeScript", "Laravel", "PHP", "Tailwind CSS", "JavaScript", "HTML & CSS"],
   },
@@ -100,6 +99,8 @@ export type Project = {
   /** "contain" shows the whole screenshot (letterboxed on imageBg); default crops to fill. */
   imageFit?: "cover" | "contain";
   imageBg?: string;
+  /** Centers the cropped screenshot instead of anchoring it top-left. */
+  imageCenter?: boolean;
   status?: string;
 };
 
@@ -112,6 +113,7 @@ export const projects: Project[] = [
     tags: ["React.js", "Supabase", "Tailwind CSS"],
     href: "https://matchelli.vercel.app",
     image: "/projects/matchelli.png",
+    imageCenter: true,
     status: "In progress · finishing touches",
   },
   {
@@ -121,12 +123,24 @@ export const projects: Project[] = [
     tags: ["Next.js", "Supabase", "shadcn/ui"],
     href: "https://jobbie-track.vercel.app",
     image: "/projects/jobbie.png",
+    imageCenter: true,
   },
   {
-    title: "Laravel Web Application",
+    title: "Brainload",
     description:
-      "Describe a Laravel project here: the users it serves, the features you owned, and the stack.",
-    tags: ["Laravel", "PHP", "MySQL"],
+      "BrainLoad is an AI-powered system that helps students and instructors manage academic workloads across multiple courses by assessing task difficulty, organizing deadlines, and identifying potential overload to promote better planning and student well-being.",
+    tags: ["Next.js", "Tailwind CSS", "FastAPI", "Convex", "Clerk", "RAG"],
+    image: "/projects/brainload.png",
+    imageCenter: true,
+  },
+  {
+    title: "Roamr",
+    description:
+      "Roamr is a car rental website that allows customers to browse available vehicles, compare options, and book cars for their trips. It streamlines the rental process by providing vehicle details, pricing, and reservation management in one platform.",
+    tags: ["Laravel", "PostgreSQL","Tailwind CSS"],
+    href: "https://roamr-red.vercel.app/",
+    image: "/projects/car_rental.png",
+    imageCenter: true,
   },
 ];
 
@@ -135,12 +149,13 @@ export type Experience = { role: string; org: string; period: string; points: st
 // PLACEHOLDER: replace with your real roles, internships and education.
 export const experience: Experience[] = [
   {
-    role: "IT Support Role / Internship",
-    org: "Organisation name",
-    period: "Month Year - Month Year",
+    role: "Lead Developer – Document Tracking System | Trainee",
+    org: "Department of Public Works and Highways (DPWH) Regional Office XIII",
+    period: "Feb 2026 – May 2026",
     points: [
-      "Resolved hardware, software and account issues for end users, escalating when needed.",
-      "Documented fixes so recurring problems were faster to solve.",
+      "Led the development of a web-based document tracking system to streamline document processing, monitoring, and workflow management.",
+      "Developed responsive interfaces using React.js, Tailwind CSS, and shadcn/ui, with Supabase for database integration and data management.",
+      "Collaborated with the team to identify requirements, implement system features, and test functionality to ensure reliable document tracking.",
     ],
   },
   {
