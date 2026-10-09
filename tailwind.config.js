@@ -1,26 +1,27 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,jsx}"],
-  mode: "jit",
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        primary: "#050816",
-        secondary: "#aaa6c3",
-        tertiary: "#151030",
-        "black-100": "#100d25",
-        "black-200": "#090325",
-        "white-100": "#f3f3f3",
+        // Palette: black #000000, hot pink #FF4191, magenta #E90074, yellow #FFF078.
+        // "soft" / "mist" / "surface" are near-black pink tints used for borders and cards.
+        canvas: "#000000",
+        surface: "#120A0F",
+        accent: "#FFF078",
+        pink: { DEFAULT: "#FF4191", light: "#FFF078", deep: "#E90074", soft: "#34121F", mist: "#160A10" },
+        forest: { DEFAULT: "#FFF078", deep: "#FFFFFF" }, // "forest" is the yellow accent text colour
+        ink: { DEFAULT: "#FFF4F8", muted: "#B9A9B1" },
+      },
+      fontFamily: {
+        sans: ["var(--font-sans)", "system-ui", "sans-serif"],
+        display: ["var(--font-display)", "Georgia", "serif"],
       },
       boxShadow: {
-        card: "0px 35px 120px -15px #211e35",
+        card: "0 1px 2px rgba(0,0,0,.25), 0 16px 36px -16px rgba(0,0,0,.55)",
+        lift: "0 2px 4px rgba(0,0,0,.3), 0 24px 48px -16px rgba(255,65,145,.4)",
       },
-      screens: {
-        xs: "450px",
-      },
-      backgroundImage: {
-        "hero-pattern": "url('/src/assets/herobg.png')",
-      },
+      maxWidth: { page: "72rem" },
     },
   },
   plugins: [],

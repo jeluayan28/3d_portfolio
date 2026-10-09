@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    @apply bg-canvas font-sans text-ink antialiased;
+  }
+  ::selection {
+    @apply bg-pink text-canvas;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-forest;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+@layer components {
+  .section {
+    @apply mx-auto w-full max-w-page px-5 py-20 sm:px-8 sm:py-28;
+  }
+  .eyebrow {
+    @apply mb-3 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-accent;
+  }
+  .eyebrow::before {
+    content: "";
+    @apply h-1.5 w-1.5 rounded-full bg-pink;
+  }
+  .heading {
+    @apply font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-colors duration-200;
+  }
+  .btn-primary {
+    @apply btn bg-pink text-canvas hover:bg-pink-light;
+  }
+  .btn-secondary {
+    @apply btn border border-forest/40 bg-transparent text-forest hover:border-pink-light hover:bg-pink-mist;
+  }
+  .card {
+    @apply rounded-2xl border border-pink-soft bg-surface shadow-card;
+  }
+}
