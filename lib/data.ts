@@ -76,16 +76,33 @@ export const pillars: Pillar[] = [
   },
 ];
 
-export type SkillGroup = { title: string; items: string[] };
+export type Skill = { name: string; icon: string };
+export type SkillGroup = { title: string; items: Skill[] };
 
 export const skillGroups: SkillGroup[] = [
   {
     title: "Web Development",
-    items: ["React", "Next.js", "TypeScript", "Laravel", "PHP", "Tailwind CSS", "JavaScript", "HTML & CSS"],
+    items: [
+      { name: "React", icon: "/tech/reactjs.png" },
+      { name: "Next.js", icon: "/tech/nextdotjs.svg" },
+      { name: "TypeScript", icon: "/tech/typescript.png" },
+      { name: "Laravel", icon: "/tech/laravel.svg" },
+      { name: "PHP", icon: "/tech/php.svg" },
+      { name: "Tailwind CSS", icon: "/tech/tailwind.png" },
+      { name: "JavaScript", icon: "/tech/javascript.png" },
+      { name: "HTML", icon: "/tech/html.png" },
+      { name: "CSS", icon: "/tech/css.png" },
+    ],
   },
   {
     title: "Tools",
-    items: ["Git & GitHub", "VS Code", "Three.js", "Vercel", "MySQL"],
+    items: [
+      { name: "Git & GitHub", icon: "/tech/git.png" },
+      { name: "VS Code", icon: "/tech/visualstudiocode.svg" },
+      { name: "Three.js", icon: "/tech/threejs.svg" },
+      { name: "Vercel", icon: "/tech/vercel.svg" },
+      { name: "MySQL", icon: "/tech/mysql.svg" },
+    ],
   },
 ];
 

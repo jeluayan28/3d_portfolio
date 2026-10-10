@@ -9,23 +9,24 @@ export function Education() {
     <section id="education" className="section">
       <SectionHeading eyebrow="Education" title="The person behind the code." />
 
-      <div className="grid items-center gap-10 md:grid-cols-[minmax(0,320px)_1fr] lg:gap-14">
-        <Reveal>
-          <div className="card mx-auto w-full max-w-xs overflow-hidden p-2 md:max-w-none">
-            <div className="relative aspect-[2/3] overflow-hidden rounded-xl">
+      <div className="grid gap-10 md:grid-cols-[minmax(0,320px)_1fr] md:items-stretch lg:gap-14">
+        <Reveal className="md:h-full">
+          <div className="card relative mx-auto w-full max-w-xs overflow-hidden p-2 md:h-full md:max-w-none">
+            {/* On md+ the photo is absolutely filled so its height follows the text card. */}
+            <div className="relative aspect-square overflow-hidden rounded-xl md:absolute md:inset-2 md:aspect-auto">
               <Image
                 src={education.photo}
                 alt={`${education.name}, graduation portrait`}
                 fill
                 sizes="(min-width: 768px) 320px, 320px"
-                className="object-cover object-top"
+                className="object-cover object-[50%_35%]"
               />
             </div>
           </div>
         </Reveal>
 
-        <Reveal delay={0.08} className="space-y-5">
-          <div className="card p-6 sm:p-8">
+        <Reveal delay={0.08} className="md:h-full">
+          <div className="card p-6 sm:p-8 md:h-full">
             <div className="flex items-center justify-between gap-3">
               <span className="grid h-11 w-11 place-items-center rounded-xl bg-pink-soft text-forest">
                 <GraduationCap size={22} />
