@@ -2,7 +2,7 @@
 
 import { useState, type FormEvent } from "react";
 import emailjs from "@emailjs/browser";
-import { Mail, Send, CheckCircle2, AlertCircle } from "lucide-react";
+import { Send, CheckCircle2, AlertCircle } from "lucide-react";
 import { profile } from "@/lib/data";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
@@ -56,17 +56,32 @@ export function Contact() {
   return (
     <section id="contact" className="section">
       <SectionHeading eyebrow="Contact" title="Let's work together." />
-      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
-        <Reveal className="space-y-6">
-          <p className="text-lg leading-relaxed text-ink-muted">
-            Hiring for an IT support or helpdesk role, or have a web project in mind? I&apos;d love to hear about it.
+      <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:items-start">
+        <Reveal className="space-y-8">
+          <p className="inline-flex items-center gap-2.5 rounded-full border border-pink-soft bg-pink-mist px-4 py-2 text-sm font-medium text-ink">
+            <span aria-hidden className="h-2 w-2 rounded-full bg-forest" />
+            Open to freelance web projects
           </p>
-          <a
-            href={`mailto:${profile.email}`}
-            className="inline-flex items-center gap-3 break-all rounded-2xl bg-pink-mist px-5 py-4 font-medium text-forest transition-colors hover:bg-pink-soft"
-          >
-            <Mail size={20} className="shrink-0" /> {profile.email}
-          </a>
+
+          <div>
+            <h3 className="font-display text-2xl font-semibold leading-snug text-ink">
+              A few lines are enough to start.
+            </h3>
+            <ul className="mt-5 space-y-4 border-l-2 border-pink/60 pl-5">
+              <li>
+                <p className="font-semibold text-forest">What you need built</p>
+                <p className="mt-0.5 text-ink-muted">A new site, a web app, or changes to something that already exists.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-forest">When you need it</p>
+                <p className="mt-0.5 text-ink-muted">A rough timeline helps me plan the work.</p>
+              </li>
+              <li>
+                <p className="font-semibold text-forest">Sites you like</p>
+                <p className="mt-0.5 text-ink-muted">Links or examples show me the look you have in mind.</p>
+              </li>
+            </ul>
+          </div>
         </Reveal>
 
         <Reveal delay={0.08}>

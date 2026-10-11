@@ -23,9 +23,6 @@ export function Navbar() {
     return () => window.removeEventListener("keydown", onKey);
   }, [open]);
 
-  const hrefOf = (l: (typeof navLinks)[number]) => ("href" in l ? l.href : `#${l.id}`);
-  const externalProps = (l: (typeof navLinks)[number]) =>
-    "external" in l && l.external ? { target: "_blank", rel: "noreferrer" } : {};
 
   return (
     <header
@@ -44,8 +41,7 @@ export function Navbar() {
           {navLinks.map((l) => (
             <li key={l.id}>
               <a
-                href={hrefOf(l)}
-                {...externalProps(l)}
+                href={`#${l.id}`}
                 className="text-sm font-medium text-ink-muted transition-colors hover:text-forest"
               >
                 {l.label}
@@ -71,8 +67,7 @@ export function Navbar() {
           {navLinks.map((l) => (
             <li key={l.id}>
               <a
-                href={hrefOf(l)}
-                {...externalProps(l)}
+                href={`#${l.id}`}
                 onClick={() => setOpen(false)}
                 className="block rounded-xl px-4 py-3 text-base font-medium text-ink hover:bg-pink-mist"
               >

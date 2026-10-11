@@ -3,6 +3,7 @@ module.exports = {
   content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./lib/**/*.{ts,tsx}"],
   theme: {
     extend: {
+      screens: { xs: "450px" },
       colors: {
         // Palette: black #000000, hot pink #FF4191, magenta #E90074, yellow #FFF078.
         // "soft" / "mist" / "surface" are near-black pink tints used for borders and cards.

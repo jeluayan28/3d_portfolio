@@ -1,10 +1,3 @@
-import {
-  Headset,
-  Wrench,
-  Code2,
-  type LucideIcon,
-} from "lucide-react";
-
 /**
  * All portfolio copy lives here so it can be edited without touching components.
  * Entries marked PLACEHOLDER should be replaced with real details before sharing.
@@ -26,25 +19,22 @@ export const profile = {
 
 export const navLinks = [
   { id: "about", label: "About" },
-  { id: "education", label: "Education" },
   { id: "work", label: "Work" },
-  { id: "experience", label: "Experience" },
-  { id: "skills", label: "Skills" },
-  { id: "resume", label: "Resume", href: profile.resume || "#contact", external: Boolean(profile.resume) },
   { id: "contact", label: "Contact" },
 ] as const;
 
 export const about = {
   paragraphs: [
-    "I'm an Information Technology graduate with experience in IT support and web development. I enjoy troubleshooting technical challenges, learning new technologies, and creating practical, user-friendly digital solutions.",
-    "With a background in React, Next.js, Laravel, and modern web technologies, I combine technical problem-solving with a strong focus on functionality and usability. I'm always eager to learn, collaborate, and turn ideas into solutions that make a meaningful impact.",
-  ],
-  highlights: [
-    { value: "IT", label: "Graduate" },
-    { value: "Support", label: "First focus" },
-    { value: "Web", label: "Dev on the side" },
+    "I'm an Information Technology graduate with a passion for web development, technical problem-solving, and creating practical digital solutions. I have experience in IT support and building web applications, combining technical knowledge with a problem-solving mindset to develop reliable, functional, and user-friendly systems.",
+    "With experience in React, Next.js, Laravel, and other modern web technologies, I enjoy transforming ideas into meaningful digital experiences. As an aspiring professional and freelance web developer, I'm continuously exploring new technologies, refining my skills, and embracing opportunities to build solutions that make a difference.",
   ],
 };
+
+export const services = [
+  { title: "Web Developer", icon: "/services/web.png" },
+  { title: "Backend Developer", icon: "/services/backend.png" },
+  { title: "Frontend Developer", icon: "/services/creator.png" },
+];
 
 export const education = {
   name: "Jelli C. Uayan",
@@ -56,52 +46,51 @@ export const education = {
   honor: "Cum Laude",
 };
 
-export type Pillar = { title: string; description: string; icon: LucideIcon };
-
-export const pillars: Pillar[] = [
-  {
-    title: "Helpdesk & Support",
-    description: "Triage, resolve and document user issues with patience and a clear paper trail.",
-    icon: Headset,
-  },
-  {
-    title: "Hardware & Software",
-    description: "Diagnosing devices, installing and configuring systems, keeping them running.",
-    icon: Wrench,
-  },
-  {
-    title: "Web Development",
-    description: "Building clean, usable web apps with React, Next.js and Laravel.",
-    icon: Code2,
-  },
-];
-
 export type Skill = { name: string; icon: string };
 export type SkillGroup = { title: string; items: Skill[] };
 
 export const skillGroups: SkillGroup[] = [
   {
-    title: "Web Development",
+    title: "Frontend Development",
     items: [
-      { name: "React", icon: "/tech/reactjs.png" },
+      { name: "React.js", icon: "/tech/reactjs.png" },
       { name: "Next.js", icon: "/tech/nextdotjs.svg" },
-      { name: "TypeScript", icon: "/tech/typescript.png" },
-      { name: "Laravel", icon: "/tech/laravel.svg" },
-      { name: "PHP", icon: "/tech/php.svg" },
-      { name: "Tailwind CSS", icon: "/tech/tailwind.png" },
       { name: "JavaScript", icon: "/tech/javascript.png" },
-      { name: "HTML", icon: "/tech/html.png" },
-      { name: "CSS", icon: "/tech/css.png" },
+      { name: "TypeScript", icon: "/tech/typescript.png" },
+      { name: "HTML5", icon: "/tech/html.png" },
+      { name: "CSS3", icon: "/tech/css.png" },
+      { name: "Tailwind CSS", icon: "/tech/tailwind.png" },
+      { name: "Bootstrap", icon: "/tech/bootstrap.svg" },
     ],
   },
   {
-    title: "Tools",
+    title: "Backend Development",
     items: [
-      { name: "Git & GitHub", icon: "/tech/git.png" },
-      { name: "VS Code", icon: "/tech/visualstudiocode.svg" },
-      { name: "Three.js", icon: "/tech/threejs.svg" },
-      { name: "Vercel", icon: "/tech/vercel.svg" },
+      { name: "Laravel", icon: "/tech/laravel.svg" },
+      { name: "PHP", icon: "/tech/php.svg" },
+      { name: "Node.js", icon: "/tech/nodedotjs.svg" },
+      { name: "FastAPI", icon: "/tech/fastapi.svg" },
+      { name: "REST APIs", icon: "/tech/restapi.svg" },
+    ],
+  },
+  {
+    title: "Database Management",
+    items: [
+      { name: "Supabase", icon: "/tech/supabase.svg" },
+      { name: "PostgreSQL", icon: "/tech/postgresql.svg" },
       { name: "MySQL", icon: "/tech/mysql.svg" },
+      { name: "Convex", icon: "/tech/convex.svg" },
+    ],
+  },
+  {
+    title: "Tools and Platforms",
+    items: [
+      { name: "Git", icon: "/tech/git.svg" },
+      { name: "GitHub", icon: "/tech/github.svg" },
+      { name: "VS Code", icon: "/tech/visualstudiocode.svg" },
+      { name: "Cursor", icon: "/tech/cursor.svg" },
+      { name: "Claude", icon: "/tech/claude.svg" },
+      { name: "Vercel", icon: "/tech/vercel.svg" },
     ],
   },
 ];
@@ -131,24 +120,6 @@ export const projects: Project[] = [
     href: "https://matchelli.vercel.app",
     image: "/projects/matchelli.png",
     imageCenter: true,
-    status: "In progress · finishing touches",
-  },
-  {
-    title: "Jobbie",
-    description:
-      "A job search tracker that keeps every application, interview, offer and job link in one place. Each role moves through stages (Applied, Shortlisted, Interviewing, Offered or Rejected), with interview dates, priorities and notes, so nothing slips through while you're job hunting.",
-    tags: ["Next.js", "Supabase", "shadcn/ui"],
-    href: "https://jobbie-track.vercel.app",
-    image: "/projects/jobbie.png",
-    imageCenter: true,
-  },
-  {
-    title: "Brainload",
-    description:
-      "BrainLoad is an AI-powered system that helps students and instructors manage academic workloads across multiple courses by assessing task difficulty, organizing deadlines, and identifying potential overload to promote better planning and student well-being.",
-    tags: ["Next.js", "Tailwind CSS", "FastAPI", "Convex", "Clerk", "RAG"],
-    image: "/projects/brainload.png",
-    imageCenter: true,
   },
   {
     title: "Roamr",
@@ -176,9 +147,15 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: "Bachelor of Science in Information Technology",
-    org: "University name",
-    period: "Year - Year",
-    points: ["Coursework in networking, systems administration and web development."],
+    role: "Freelance Web Developer",
+    org: "Self-Employed | Freelance",
+    period: "Jul 2025 – Jun 2026",
+    points: [
+      "Designed and developed websites for personal projects and freelance work, focusing on responsive layouts, functionality, and user-friendly experiences.",
+      "Built web applications using React.js, Next.js, Laravel, and modern web technologies to create practical solutions for different website requirements.",
+      "Implemented frontend interfaces, integrated backend functionality, and managed database connections to deliver functional and responsive websites.",
+      "Managed the website development process, from planning and designing layouts to coding, testing, debugging, and deployment.",
+      "Continuously improved website performance, usability, and responsiveness across desktop and mobile devices.",
+    ],
   },
 ];

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { Award, GraduationCap, MapPin } from "lucide-react";
 import { education } from "@/lib/data";
 import { Reveal } from "./Reveal";
 import { SectionHeading } from "./SectionHeading";
@@ -9,51 +8,61 @@ export function Education() {
     <section id="education" className="section">
       <SectionHeading eyebrow="Education" title="The person behind the code." />
 
-      <div className="grid gap-10 md:grid-cols-[minmax(0,320px)_1fr] md:items-stretch lg:gap-14">
-        <Reveal className="md:h-full">
-          <div className="card relative mx-auto w-full max-w-xs overflow-hidden p-2 md:h-full md:max-w-none">
-            {/* On md+ the photo is absolutely filled so its height follows the text card. */}
-            <div className="relative aspect-square overflow-hidden rounded-xl md:absolute md:inset-2 md:aspect-auto">
+      <Reveal>
+        <div className="grid items-center gap-14 md:grid-cols-[minmax(0,340px)_1fr] lg:gap-20">
+          {/* Portrait: offset frame behind, honor seal pinned to the corner like a diploma stamp. */}
+          <figure className="relative mx-auto w-full max-w-[340px] pb-6 pr-6 md:mx-0">
+            <div
+              aria-hidden
+              className="absolute inset-0 left-6 top-6 rounded-3xl border-2 border-pink/70"
+            />
+            <div className="relative aspect-[4/5] overflow-hidden rounded-3xl bg-surface">
               <Image
                 src={education.photo}
                 alt={`${education.name}, graduation portrait`}
                 fill
-                sizes="(min-width: 768px) 320px, 320px"
-                className="object-cover object-[50%_35%]"
+                sizes="340px"
+                className="object-cover object-[50%_30%]"
               />
             </div>
-          </div>
-        </Reveal>
-
-        <Reveal delay={0.08} className="md:h-full">
-          <div className="card p-6 sm:p-8 md:h-full">
-            <div className="flex items-center justify-between gap-3">
-              <span className="grid h-11 w-11 place-items-center rounded-xl bg-pink-soft text-forest">
-                <GraduationCap size={22} />
-              </span>
-              <span className="inline-flex items-center gap-2 rounded-full border border-pink bg-pink-mist px-4 py-1.5 text-sm font-semibold uppercase tracking-wider text-forest">
-                <Award size={16} />
-                {education.honor}
-              </span>
-            </div>
-            <p className="mt-5 text-sm font-medium text-ink-muted">
-              Class of {education.graduated}
-            </p>
-            <h3 className="mt-1 font-display text-2xl font-semibold text-forest sm:text-3xl">
-              {education.degree}
-            </h3>
-            <p className="mt-3 flex items-start gap-2 text-lg text-ink">
-              <MapPin size={18} className="mt-1.5 shrink-0 text-ink-muted" />
-              <span>
-                {education.school}
-                <span className="block text-base text-ink-muted">
-                  {education.college}
+            <figcaption
+              className="absolute -bottom-2 -right-2 grid h-28 w-28 -rotate-[8deg] place-items-center rounded-full border-2 border-forest bg-canvas text-center shadow-card sm:-right-4 sm:h-32 sm:w-32"
+            >
+              <span className="flex flex-col items-center leading-tight">
+                <span className="font-display text-lg font-semibold text-forest sm:text-xl">
+                  {education.honor}
+                </span>
+                <span className="mt-1 text-xs text-ink-muted sm:text-sm">
+                  Class of {education.graduated}
                 </span>
               </span>
-            </p>
+            </figcaption>
+          </figure>
+
+          <div className="max-w-xl">
+            <h3 className="font-display text-3xl font-semibold leading-tight tracking-tight text-ink sm:text-4xl">
+              {education.degree}
+            </h3>
+
+            <dl className="mt-8 divide-y divide-pink-soft border-y border-pink-soft">
+              <div className="grid gap-1 py-4 sm:grid-cols-[7rem_1fr] sm:gap-6">
+                <dt className="text-sm text-ink-muted">School</dt>
+                <dd className="text-lg text-ink">{education.school}</dd>
+              </div>
+              <div className="grid gap-1 py-4 sm:grid-cols-[7rem_1fr] sm:gap-6">
+                <dt className="text-sm text-ink-muted">College</dt>
+                <dd className="text-lg text-ink">{education.college}</dd>
+              </div>
+              <div className="grid gap-1 py-4 sm:grid-cols-[7rem_1fr] sm:gap-6">
+                <dt className="text-sm text-ink-muted">Graduated</dt>
+                <dd className="text-lg text-ink">
+                  {education.graduated}, {education.honor}
+                </dd>
+              </div>
+            </dl>
           </div>
-        </Reveal>
-      </div>
+        </div>
+      </Reveal>
     </section>
   );
 }
