@@ -10,7 +10,7 @@ export const profile = {
   headline: "I build modern websites and web applications that turn ideas into practical digital solutions.",
   tagline:
     "I'm an Information Technology graduate and freelance web developer specializing in responsive, functional, and modern web experiences. From business websites to custom web applications, I enjoy turning ideas into real, working products.",
-  stack: ["React", "Next.js", "Laravel", "JavaScript", "PHP", "Tailwind CSS"],
+  stack: ["React.js", "Next.js", "Laravel", "Tailwind CSS"],
   email: "uayanjelli@gmail.com",
   github: "", // PLACEHOLDER: e.g. "https://github.com/your-handle"
   linkedin: "", // PLACEHOLDER: e.g. "https://linkedin.com/in/your-handle"

@@ -25,7 +25,23 @@ function SyncCanvasRect() {
 export function SkillsStage({ children }: { children: React.ReactNode }) {
   const ref = useRef<HTMLDivElement>(null);
   const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
+  // Create the WebGL context only once the grid is near the viewport, so the page doesn't hold two
+  // contexts (hero + skills) from first paint, and so dev reloads burn fewer of Chrome's context budget.
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setMounted(true);
+          io.disconnect();
+        }
+      },
+      { rootMargin: "300px" },
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
 
   return (
     <div ref={ref} className="relative">
@@ -33,6 +49,7 @@ export function SkillsStage({ children }: { children: React.ReactNode }) {
       {mounted && (
         <Canvas
           dpr={[1, 2]}
+          gl={{ powerPreference: "high-performance" }}
           eventSource={ref as React.RefObject<HTMLElement>}
           style={{ position: "absolute", inset: 0, pointerEvents: "none" }}
         >
